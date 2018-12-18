@@ -181,3 +181,49 @@ if [ -f "$HOME/.laptop.local" ]; then
   # shellcheck disable=SC1090
   . "$HOME/.laptop.local"
 fi
+
+#
+# install custome tools
+mkdir ~/tools
+git clone git@github.com:maurosoria/dirsearch.git ~/tools/dirsearch
+git clone git@github.com:aboul3la/Sublist3r.git ~/tools/Sublist3r
+git clone git@github.com:enjoiz/XXEinjector.git ~/tools/XXEinjector
+git clone git@github.com:s0md3v/XSStrike.git ~/tools/XSStrike
+git clone git@github.com:epinna/tplmap.git ~/tools/tplmap
+git clone git@github.com:D35m0nd142/LFISuite.git ~/tools/LFISuite
+git clone git@github.com:ticarpi/jwt_tool.git ~/tools/jwt_tool # Json Web Token Checker
+git clone git@github.com:kost/dvcs-ripper.git ~/tools/dvcs-ripper # rip version controll system [git, svn, mercurial, etc...]
+git clone git@github.com:internetwache/GitTools.git ~/tools/GitTools
+pip3 install -r ~/tools/GitTools/Finder/requirements.txt
+git clone git@github.com:ambionics/phpggc.git ~/tools/phpggc
+git clone git@github.com:lanjelot/patator.git ~/tools/pataor
+~/tools/patator/setup.py
+git clone git@github.com:frohoff/ysoserial.git ~/tools/ysoserial
+mkdir ~/tools/ysoserial
+wget "https://jitpack.io/com/github/frohoff/ysoserial/master-SNAPSHOT/ysoserial-master-SNAPSHOT.jar" ~/tools/ysoserial
+git clone git@github.com:DataSploit/datasploit.git ~/tools/datasploit
+pip install -r ~/tools/datasploit/requirements.txt --user
+pip install truffleHog --user
+
+cat << EOS >> ~/.zshrc
+alias dirsearch='~/tools/dirsearch/dirsearch.py' # directory listing
+alias sublist='~/tools/Sublist3r/sublist3r.py' # directory listing
+alias xxeinjector='~/tools/XXEinjector/XXEinjector.rb' # xxe inject
+alias xsstrike='~/tools/XSStrike/xsstrike.py' # xss
+alias tplmap='~/tools/tplmap/tplmap.py' # Template Injection,  TODO: Set Burp Extender
+alias lfisuite='~/tools/LFISuite/lfisuite.py' # local file include
+alias jwt_token='~/tools/jwt_tool/jwt_tool.py' # json web token chekcer
+alias dvc_ripper_git='~/tools/dvcs-ripper/rip-git.pl' # rip git
+alias dvc_ripper_svn='~/tools/dvcs-ripper/rip-svn.pl' # rip svn
+alias dvc_ripper_cvs='~/tools/dvcs-ripper/rip-cvs.pl' # rip cvs
+alias gittools_dumper='~/tools/GitTools/Dumper/gitdumper.sh' # dump git weak web service
+alias gittools_finder='~/tools/GitTools/Finder/gitfinder.py' # search git weak web searvice
+alias gittools_extractor='~/tools/GitTools/Extractor/extractor.sh' # extract git weak web service
+alias phpggc='~/tools/phpggc/phpggc' # php gadget chain, Requierements: PHP >5.6
+alias patator='~/tools/patator/patator.py' # Brute Force [ftp, ssh, telnet, ssmtp, http, imap, ldap, etc..]
+alias ysoserial='~/tools/ysoserial/ysoserial-master-SNAPSHOT.jar' # java object deserialization
+alias datasploit='~/tools/datasploit/datasploit.py' # OSINT, data sploit
+#alias truffleHog # search sensitive file in git
+EOS
+
+
