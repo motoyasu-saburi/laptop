@@ -206,6 +206,9 @@ pip install -r ~/tools/datasploit/requirements.txt --user
 pip install truffleHog --user
 wget https://digi.ninja/files/bucket_finder_1.1.tar.bz2 ~/tools/
 tar xf ~/tools/bucket_finder_1.1.tar.bz2 -C ~/tools
+# AntiVirus Alert spyware
+#git clone git@github.com:leebaird/discover.git ~/opt/discover
+# (cd /opt/discover && sudo ./update.sh)
 
 cat << EOS >> ~/.zshrc
 alias dirsearch='~/tools/dirsearch/dirsearch.py' # directory listing
