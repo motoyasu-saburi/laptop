@@ -209,6 +209,11 @@ tar xf ~/tools/bucket_finder_1.1.tar.bz2 -C ~/tools
 # AntiVirus Alert spyware
 #git clone git@github.com:leebaird/discover.git ~/opt/discover
 # (cd /opt/discover && sudo ./update.sh)
+git clone https://bitbucket.org/LaNMaSteR53/recon-ng.git ~/tools/recon-ng
+pip install -r ~/tools/recon-ng/REQUIREMENTS --user
+git clone git@github.com:OJ/gobuster.git ~/tools/gobuster
+(cd ~/tools/gobuster/ && go get && go build && go install)
+go get github.com/michenriksen/gitrob
 
 cat << EOS >> ~/.zshrc
 alias dirsearch='~/tools/dirsearch/dirsearch.py' # directory listing
@@ -230,6 +235,9 @@ alias ysoserial='~/tools/ysoserial/ysoserial-master-SNAPSHOT.jar' # java object 
 alias datasploit='~/tools/datasploit/datasploit.py' # OSINT, data sploit
 #alias truffleHog # search sensitive file in git
 alias bucket_finder='~/tools/bucket_finder/bucket_finder.rb'
+alias recon-ng='python ~/tools/recon-ng/recon-ng'
+alias gobuster='go run ~/tools/gobuster/main.go'
+alias gitrob='~/dev/go/bin/gitrob'
 EOS
 
 
