@@ -187,6 +187,7 @@ fi
 mkdir ~/tools
 git clone git@github.com:maurosoria/dirsearch.git ~/tools/dirsearch
 git clone git@github.com:aboul3la/Sublist3r.git ~/tools/Sublist3r
+(cd ~/tools/ && wget -O dirb.tar.gz https://downloads.sourceforge.net/project/dirb/dirb/2.22/dirb222.tar.gz && tar -xf dirb.tar.gz && rm -rf dirb222.tar.gz && chmod -R a+X dirb222)
 git clone git@github.com:enjoiz/XXEinjector.git ~/tools/XXEinjector
 git clone git@github.com:s0md3v/XSStrike.git ~/tools/XSStrike
 git clone git@github.com:epinna/tplmap.git ~/tools/tplmap
@@ -222,6 +223,7 @@ git clone git@github.com:jobertabma/relative-url-extractor.git ~/tools/relative-
 cat << EOS >> ~/.zshrc
 alias dirsearch='~/tools/dirsearch/dirsearch.py' # directory listing
 alias sublist='~/tools/Sublist3r/sublist3r.py' # directory listing
+alias dirb='~/tools/dirb222/dirb'
 alias xxeinjector='~/tools/XXEinjector/XXEinjector.rb' # xxe inject
 alias xsstrike='~/tools/XSStrike/xsstrike.py' # xss
 alias tplmap='~/tools/tplmap/tplmap.py' # Template Injection,  TODO: Set Burp Extender
