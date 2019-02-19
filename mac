@@ -254,4 +254,3 @@ alias relative-url-extractor='ruby ~/tools/relative-url-extractor/extract.rb'
 alias port-scan='bash ~/tools/port_scanning.sh'
 EOS
 
-# test
