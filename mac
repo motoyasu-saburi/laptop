@@ -223,6 +223,8 @@ git clone git@github.com:GerbenJavado/LinkFinder.git ~/tools/Linkfinder
 git clone git@github.com:jobertabma/relative-url-extractor.git ~/tools/relative-url-extractor
 mv ~/configure/bokuconf/port_scanning.sh ~/tools/port_scanning.sh
 git clone https://github.com/TheRook/subbrute.git ~/tools/
+(git clone https://github.com/guelfoweb/knock.git ~/tools/knock && cd ~/tools/knock && sudo python setup.py install)
+
 
 
 cat << EOS >> ~/.zshrc
